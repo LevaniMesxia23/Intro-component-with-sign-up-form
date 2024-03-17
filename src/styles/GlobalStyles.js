@@ -13,8 +13,8 @@ export const GlobalStyles = createGlobalStyle`
 body{
   font-family: "Poppins", sans-serif;
   background-color: rgba(255, 121, 121, 1);
-  background-image: url(${MobBackground});
-  background-size: cover;
+  background-image: url(${DesktopBackground});
+  background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
 

@@ -12,5 +12,27 @@ export default function Header(){
 
 const Container = styled.header`
   display: flex;
+  flex-direction: column;
+
+  h1,p{
+    width: 525px;
+  }
+  h1{
+    color: #FFF;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -0.521px;
+    margin-bottom: 1.1rem;
+  }
+
+  p{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 162.5%;
+  }
 `
 
