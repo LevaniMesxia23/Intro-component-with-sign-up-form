@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import './App.css'
 import Header from './components/Header'
+import Offer from './components/Offer'
 import { GlobalStyles } from './styles/GlobalStyles'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Main>
       <GlobalStyles />
       <Header />
+      <Offer />
     </Main>
 
     </>
