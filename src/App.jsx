@@ -18,9 +18,7 @@ function App() {
         <Offer />
         <Inputs />
       </div>
-
     </Main>
-
     </>
   )
 }

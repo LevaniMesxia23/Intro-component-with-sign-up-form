@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 export default function Inputs() {
+  function formValidation(){
+    const [values, setValues] = useState({
+      name: "",
+      lastName: "",
+      email: "",
+      password: ""
+    })
+  }
   return (
     <Box>
       <input
@@ -23,7 +31,6 @@ export default function Inputs() {
       type="password"
       id="name" 
       placeholder='Password'/>
-
 
       <button>CLAIM YOUR FREE TRIAL</button>
 
