@@ -22,6 +22,12 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media(max-width: 767px){
+  background-image: url(${MobBackground});
 }
+}
+
+
 
 `
