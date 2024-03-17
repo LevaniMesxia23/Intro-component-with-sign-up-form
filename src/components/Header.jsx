@@ -13,6 +13,7 @@ export default function Header(){
 const Container = styled.header`
   display: flex;
   flex-direction: column;
+  margin-right: 2.81rem;
 
   h1,p{
     width: 525px;
