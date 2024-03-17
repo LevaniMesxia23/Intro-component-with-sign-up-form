@@ -9,6 +9,11 @@ export default function Inputs() {
       email: "",
       password: ""
     })
+
+    function handleInput(event){
+      const newObj = {...values, [event.target.name] : [event.target.value]}
+      setValues(newObj)
+    }
   }
   return (
     <Box>
