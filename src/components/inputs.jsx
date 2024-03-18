@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import errorImg from "/images/icon-error.svg";
 
 export default function Inputs() {
   const [errors, setErrors] = useState({
@@ -23,13 +24,15 @@ export default function Inputs() {
   function validation(e) {
     e.preventDefault();
     if (!values.name) {
-      console.log(values);
+      errors.name = "First Name cannot be empty";
     }
   }
+  console.log(errors.name);
   return (
     <Box>
       <form onSubmit={validation}>
         <div>
+          <img src={errorImg} alt="" />
           <input
             name="name"
             onChange={handleInput}
@@ -39,33 +42,42 @@ export default function Inputs() {
           />
         </div>
 
-        <input
-          name="lastName"
-          onChange={handleInput}
-          type="text"
-          id="last-name"
-          placeholder="Last Name"
-        />
+        <div>
+          <img src={errorImg} alt="" />
+          <input
+            name="lastName"
+            onChange={handleInput}
+            type="text"
+            id="last-name"
+            placeholder="Last Name"
+          />
+        </div>
 
-        <input
-          name="email"
-          onChange={handleInput}
-          type="email"
-          id="email"
-          placeholder="Email Adress"
-        />
+        <div>
+          <img src={errorImg} alt="" />
+          <input
+            name="email"
+            onChange={handleInput}
+            type="email"
+            id="email"
+            placeholder="Email Adress"
+          />
+        </div>
 
-        <input
-          name="password"
-          onChange={handleInput}
-          type="password"
-          id="password"
-          placeholder="Password"
-        />
+        <div>
+          <img src={errorImg} alt="" />
+          <input
+            name="password"
+            onChange={handleInput}
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
 
         <button>CLAIM YOUR FREE TRIAL</button>
 
-        <div>
+        <div className="button-div">
           By clicking the button, you are agreeing to our{" "}
           <span>Terms and Services</span>
         </div>
@@ -87,11 +99,21 @@ const Box = styled.div`
   align-items: center;
   padding: 2.5rem;
 
+  div {
+    margin-bottom: 1.25rem;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 1rem;
+      right: 1.69rem;
+    }
+  }
+
   input {
     width: 28.75rem;
     height: 3.5rem;
     flex-shrink: 0;
-    margin-bottom: 1.25rem;
     border-radius: 0.3125rem;
     border: 1px solid #5e54a4;
     background: #fff;
@@ -103,7 +125,6 @@ const Box = styled.div`
     font-weight: 600;
     line-height: 1.625rem;
     letter-spacing: 0.01563rem;
-    opacity: 0.75;
     padding-left: 1.21rem;
   }
 
@@ -125,7 +146,7 @@ const Box = styled.div`
     cursor: pointer;
   }
 
-  div {
+  .button-div {
     color: #bab7d4;
     text-align: center;
     font-family: Poppins;
