@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 export default function Inputs() {
-  function formValidation(){
+  const [errors, setErrors] = useState({
+    name: false,
+    lastName: false,
+    email: false,
+    password: false
+  })
     const [values, setValues] = useState({
       name: "",
       lastName: "",
@@ -13,8 +18,8 @@ export default function Inputs() {
     function handleInput(event){
       const newObj = {...values, [event.target.name] : [event.target.value]}
       setValues(newObj)
-    }
   }
+
   return (
     <Box>
       <input
@@ -24,17 +29,17 @@ export default function Inputs() {
       
       <input
       type="text"
-      id="name" 
+      id="last-name" 
       placeholder='Last Name'/>
 
       <input
       type="email"
-      id="name" 
+      id="email" 
       placeholder='Email Adress'/>
 
       <input
       type="password"
-      id="name" 
+      id="password" 
       placeholder='Password'/>
 
       <button>CLAIM YOUR FREE TRIAL</button>
