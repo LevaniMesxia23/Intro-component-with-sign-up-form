@@ -20,6 +20,9 @@ export default function Inputs() {
       setValues(newObj)
   }
 
+  function validation(){
+
+  }
   return (
     <Box>
       <input
@@ -42,7 +45,7 @@ export default function Inputs() {
       id="password" 
       placeholder='Password'/>
 
-      <button>CLAIM YOUR FREE TRIAL</button>
+      <button onClick={() => validation()}>CLAIM YOUR FREE TRIAL</button>
 
       <div>By clicking the button, you are agreeing to our <span>Terms and Services</span></div>
     </Box>
