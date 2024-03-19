@@ -23,33 +23,34 @@ export default function Inputs() {
 
   function validation(e) {
     e.preventDefault();
-    const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$/;
+    const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,16}$/;
 
     if (!values.name.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, name: true }));
-    } else{
+    } else {
       setErrors((prevErrors) => ({ ...prevErrors, name: false }));
     }
 
     if (!values.lastName.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, lastName: true }));
-    }
-    else{
+    } else {
       setErrors((prevErrors) => ({ ...prevErrors, lastName: false }));
     }
 
-
     if (!values.email.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, email: true }));
-    } else{
+    } else if (!emailRegex.test(values.email)) {
+      setErrors((prevErrors) => ({ ...prevErrors, email: true }));
+    } else {
       setErrors((prevErrors) => ({ ...prevErrors, email: false }));
     }
 
-
     if (!values.password.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, password: true }));
-    } else{
+    } else if (!passwordRegex.test(values.password)) {
+      setErrors((prevErrors) => ({ ...prevErrors, password: true }));
+    } else {
       setErrors((prevErrors) => ({ ...prevErrors, password: false }));
     }
 
@@ -68,7 +69,7 @@ export default function Inputs() {
             id="name"
             placeholder="First Name"
           />
-
+          
         </div>
 
         <div>
@@ -87,7 +88,7 @@ export default function Inputs() {
           <input
             name="email"
             onChange={handleInput}
-            type="email"
+            type="text"
             id="email"
             placeholder="Email Adress"
           />
