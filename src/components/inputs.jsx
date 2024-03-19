@@ -17,22 +17,48 @@ export default function Inputs() {
   });
 
   function handleInput(event) {
-    const newObj = { ...values, [event.target.name]: [event.target.value] };
+    const { name, value } = event.target;
+    const newObj = { ...values, [name]: value };
     setValues(newObj);
   }
 
   function validation(e) {
     e.preventDefault();
-    if (!values.name) {
+    const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$/;
+
+    if (!values.name.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, name: true }));
+      errors.name = true;
       errors.name = "First Name cannot be empty";
     }
+
+    if (!values.lastName.trim()) {
+      setErrors((prevErrors) => ({ ...prevErrors, lastName: true }));
+      errors.lastName = "Last Name cannot be empty";
+      console.log("abdgevzt");
+    }
+
+    if (!values.email.trim()) {
+      setErrors(prevErrors => ({   ...prevErrors,   email: true }));
+      errors.email = true;
+      errors.email = "Looks like this is not an email";
+    }
+
+    if (!values.password.trim()) {
+      setErrors(prevErrors => ({   ...prevErrors,   password: true }));
+      errors.password = true;
+      errors.password = "Password cannot be empty";
+    }
+    console.log(errors);
+    return setErrors;
   }
-  console.log(errors.name);
   return (
     <Box>
       <form onSubmit={validation}>
         <div>
-          <img src={errorImg} alt="" />
+          {errors.name && <img src={errorImg} alt="" />}
           <input
             name="name"
             onChange={handleInput}
@@ -43,7 +69,7 @@ export default function Inputs() {
         </div>
 
         <div>
-          <img src={errorImg} alt="" />
+          {errors.lastName && <img src={errorImg} alt="" />}
           <input
             name="lastName"
             onChange={handleInput}
@@ -54,7 +80,7 @@ export default function Inputs() {
         </div>
 
         <div>
-          <img src={errorImg} alt="" />
+          {errors.email && <img src={errorImg} alt="" />}
           <input
             name="email"
             onChange={handleInput}
@@ -65,7 +91,7 @@ export default function Inputs() {
         </div>
 
         <div>
-          <img src={errorImg} alt="" />
+          {errors.password && <img src={errorImg} alt="" />}
           <input
             name="password"
             onChange={handleInput}
