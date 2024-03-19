@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import './App.css'
 import Header from './components/Header'
 import Offer from './components/Offer'
-import Inputs from './components/inputs'
+import Form from './components/Form'
 import { GlobalStyles } from './styles/GlobalStyles'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       </div>
       <div className='right-side'>
         <Offer />
-        <Inputs />
+        <Form />
       </div>
     </Main>
     </>

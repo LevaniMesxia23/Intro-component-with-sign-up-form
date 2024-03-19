@@ -15,7 +15,6 @@ export default function Inputs() {
     email: "",
     password: "",
   });
-
   function handleInput(event) {
     const { name, value } = event.target;
     const newObj = { ...values, [name]: value };
@@ -25,32 +24,35 @@ export default function Inputs() {
   function validation(e) {
     e.preventDefault();
     const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$/;
 
     if (!values.name.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, name: true }));
-      errors.name = true;
-      errors.name = "First Name cannot be empty";
+    } else{
+      setErrors((prevErrors) => ({ ...prevErrors, name: false }));
     }
 
     if (!values.lastName.trim()) {
       setErrors((prevErrors) => ({ ...prevErrors, lastName: true }));
-      errors.lastName = "Last Name cannot be empty";
-      console.log("abdgevzt");
     }
+    else{
+      setErrors((prevErrors) => ({ ...prevErrors, lastName: false }));
+    }
+
 
     if (!values.email.trim()) {
-      setErrors(prevErrors => ({   ...prevErrors,   email: true }));
-      errors.email = true;
-      errors.email = "Looks like this is not an email";
+      setErrors((prevErrors) => ({ ...prevErrors, email: true }));
+    } else{
+      setErrors((prevErrors) => ({ ...prevErrors, email: false }));
     }
 
+
     if (!values.password.trim()) {
-      setErrors(prevErrors => ({   ...prevErrors,   password: true }));
-      errors.password = true;
-      errors.password = "Password cannot be empty";
+      setErrors((prevErrors) => ({ ...prevErrors, password: true }));
+    } else{
+      setErrors((prevErrors) => ({ ...prevErrors, password: false }));
     }
+
     console.log(errors);
     return setErrors;
   }
@@ -66,6 +68,7 @@ export default function Inputs() {
             id="name"
             placeholder="First Name"
           />
+
         </div>
 
         <div>
