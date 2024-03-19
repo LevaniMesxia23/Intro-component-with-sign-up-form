@@ -69,7 +69,7 @@ export default function Inputs() {
             id="name"
             placeholder="First Name"
           />
-          
+          {errors.name == true ? <p>First Name cannot be empty</p> : false}
         </div>
 
         <div>
@@ -81,6 +81,7 @@ export default function Inputs() {
             id="last-name"
             placeholder="Last Name"
           />
+          {errors.lastName == true ? <p>Last Name cannot be empty</p> : false}
         </div>
 
         <div>
@@ -92,6 +93,11 @@ export default function Inputs() {
             id="email"
             placeholder="Email Adress"
           />
+          {errors.email == true ? (
+            <p>Looks like this is not an email</p>
+          ) : (
+            false
+          )}
         </div>
 
         <div>
@@ -103,6 +109,7 @@ export default function Inputs() {
             id="password"
             placeholder="Password"
           />
+          {errors.password == true ? <p>Password cannot be empty</p> : false}
         </div>
 
         <button>CLAIM YOUR FREE TRIAL</button>
@@ -118,7 +125,6 @@ export default function Inputs() {
 
 const Box = styled.div`
   width: 33.75rem;
-  height: 29.625rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
   background: #fff;
@@ -129,6 +135,10 @@ const Box = styled.div`
   align-items: center;
   padding: 2.5rem;
 
+  &:nth-child(2) .button-div {
+    margin: 0;
+  }
+
   div {
     margin-bottom: 1.25rem;
     position: relative;
@@ -137,6 +147,16 @@ const Box = styled.div`
       position: absolute;
       top: 1rem;
       right: 1.69rem;
+    }
+
+    p {
+      color: #ff7979;
+      text-align: right;
+      font-size: 0.6875rem;
+      font-style: italic;
+      font-weight: 500;
+      line-height: normal;
+      margin-top: 0.37rem;
     }
   }
 
@@ -173,18 +193,17 @@ const Box = styled.div`
     font-weight: 600;
     line-height: 1.625rem;
     letter-spacing: 0.0625rem;
+    margin-bottom: 0.5rem;
     cursor: pointer;
   }
 
   .button-div {
     color: #bab7d4;
     text-align: center;
-    font-family: Poppins;
     font-size: 0.6875rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.625rem;
-    margin-top: 0.5rem;
 
     span {
       color: #ff7979;
