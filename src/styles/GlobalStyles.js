@@ -23,7 +23,7 @@ body{
   align-items: center;
   flex-direction: column;
 
-  @media(max-width: 767px){
+  @media(max-width: 1000px){
   background-image: url(${MobBackground});
 }
 }
