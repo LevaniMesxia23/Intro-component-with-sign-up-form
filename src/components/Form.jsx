@@ -62,6 +62,11 @@ export default function Inputs() {
         <div>
           {errors.name && <img src={errorImg} alt="" />}
           <input
+            style={
+              errors.name
+                ? { border: "1.5px solid #FF7979" }
+                : { border: "1px solid #5e54a4" }
+            }
             name="name"
             onChange={handleInput}
             type="text"
@@ -74,6 +79,11 @@ export default function Inputs() {
         <div>
           {errors.lastName && <img src={errorImg} alt="" />}
           <input
+            style={
+              errors.lastName
+                ? { border: "1.5px solid #FF7979" }
+                : { border: "1px solid #5e54a4" }
+            }
             name="lastName"
             onChange={handleInput}
             type="text"
@@ -86,6 +96,11 @@ export default function Inputs() {
         <div>
           {errors.email && <img src={errorImg} alt="" />}
           <input
+            style={
+              errors.email
+                ? { border: "1.5px solid #FF7979" }
+                : { border: "1px solid #5e54a4" }
+            }
             name="email"
             onChange={handleInput}
             type="text"
@@ -102,6 +117,11 @@ export default function Inputs() {
         <div>
           {errors.password && <img src={errorImg} alt="" />}
           <input
+            style={
+              errors.password
+                ? { border: "1.5px solid #FF7979" }
+                : { border: "1px solid #5e54a4" }
+            }
             name="password"
             onChange={handleInput}
             type="password"
@@ -174,7 +194,6 @@ const Box = styled.div`
     line-height: 1.625rem;
     letter-spacing: 0.01563rem;
     padding-left: 1.21rem;
-    outline: 1px solid ${(props) => (props.errors.name ? "#FF7979" : "#5e54a4")};
   }
 
   button {
