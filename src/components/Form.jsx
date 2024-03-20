@@ -53,12 +53,11 @@ export default function Inputs() {
     } else {
       setErrors((prevErrors) => ({ ...prevErrors, password: false }));
     }
-
-    console.log(errors);
     return setErrors;
   }
+  console.log(errors);
   return (
-    <Box>
+    <Box errors={errors}>
       <form onSubmit={validation}>
         <div>
           {errors.name && <img src={errorImg} alt="" />}
@@ -169,13 +168,13 @@ const Box = styled.div`
     background: #fff;
 
     color: #3d3b48;
-    font-family: Poppins;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 600;
     line-height: 1.625rem;
     letter-spacing: 0.01563rem;
     padding-left: 1.21rem;
+    outline: 1px solid ${(props) => (props.errors.name ? "#FF7979" : "#5e54a4")};
   }
 
   button {
@@ -187,7 +186,6 @@ const Box = styled.div`
     box-shadow: 0px -4px 0px 0px rgba(0, 0, 0, 0.09) inset;
     border: none;
     color: #fff;
-    font-family: Poppins;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 600;
@@ -207,7 +205,6 @@ const Box = styled.div`
 
     span {
       color: #ff7979;
-      font-family: Poppins;
       font-size: 0.6875rem;
       font-style: normal;
       font-weight: 700;
