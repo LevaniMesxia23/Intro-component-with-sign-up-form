@@ -33,8 +33,12 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 767px) {
     flex-direction: column;
+
+    .right-side{
+      width: 20.4375rem;
+    }
   }
 `;
 

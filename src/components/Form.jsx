@@ -243,4 +243,15 @@ const Box = styled.div`
       cursor: pointer;
     }
   }
+  @media(max-width: 767px){
+    width: 20.4375rem;
+    
+
+    input{
+      width: 17.4375rem;
+    }
+    button{
+      width: 17.4375rem;
+    }
+  }
 `;
