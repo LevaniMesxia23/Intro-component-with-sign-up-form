@@ -4,9 +4,10 @@ import Header from './components/Header'
 import Offer from './components/Offer'
 import Form from './components/Form'
 import { GlobalStyles } from './styles/GlobalStyles'
+import { useState } from 'react'
 
 function App() {
-
+const [component, setComponent] = useState(false)
   return (
     <>
     <GlobalStyles />
@@ -16,7 +17,7 @@ function App() {
       </div>
       <div className='right-side'>
         <Offer />
-        <Form />
+        {component == false ? <Form setComponent={setComponent}/> : null}
       </div>
     </Main>
     </>

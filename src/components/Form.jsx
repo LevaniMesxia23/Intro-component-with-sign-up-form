@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import errorImg from "/images/icon-error.svg";
 
-export default function Inputs() {
+export default function Inputs(props) {
   const [errors, setErrors] = useState({
     name: false,
     lastName: false,
@@ -53,9 +53,21 @@ export default function Inputs() {
     } else {
       setErrors((prevErrors) => ({ ...prevErrors, password: false }));
     }
+
+    if (
+      errors.name == false && values.name &&
+      errors.lastName == false && values.lastName &&
+      errors.email == false && values.email &&
+      errors.password == false && values.password 
+    ) {
+      console.log("lasha");
+      props.setComponent(true);
+    }
     return setErrors;
   }
-  console.log(errors);
+  useEffect(() => {
+    
+  }, [errors])
   return (
     <Box errors={errors}>
       <form onSubmit={validation}>
