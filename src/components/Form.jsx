@@ -55,19 +55,21 @@ export default function Inputs(props) {
     }
 
     if (
-      errors.name == false && values.name &&
-      errors.lastName == false && values.lastName &&
-      errors.email == false && values.email &&
-      errors.password == false && values.password 
+      errors.name == false &&
+      values.name &&
+      errors.lastName == false &&
+      values.lastName &&
+      errors.email == false &&
+      values.email &&
+      errors.password == false &&
+      values.password
     ) {
       console.log("lasha");
       props.setComponent(true);
     }
     return setErrors;
   }
-  useEffect(() => {
-    
-  }, [errors])
+  useEffect(() => {}, [errors]);
   return (
     <Box errors={errors}>
       <form onSubmit={validation}>
@@ -242,15 +244,17 @@ const Box = styled.div`
       line-height: 1.625rem;
       cursor: pointer;
     }
+    span:hover {
+      text-decoration: underline;
+    }
   }
-  @media(max-width: 767px){
+  @media (max-width: 767px) {
     width: 20.4375rem;
-    
 
-    input{
+    input {
       width: 17.4375rem;
     }
-    button{
+    button {
       width: 17.4375rem;
     }
   }
