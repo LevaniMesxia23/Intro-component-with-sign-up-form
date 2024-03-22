@@ -33,7 +33,7 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
 
     .right-side{

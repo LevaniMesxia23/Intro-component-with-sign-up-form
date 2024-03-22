@@ -40,7 +40,7 @@ const Container = styled.header`
     font-weight: 500;
     line-height: 162.5%;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 20.4375rem;
     margin-right: 0;
     text-align: center;

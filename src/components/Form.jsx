@@ -248,7 +248,7 @@ const Box = styled.div`
       text-decoration: underline;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 20.4375rem;
 
     input {

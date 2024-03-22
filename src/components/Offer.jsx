@@ -41,7 +41,7 @@ const Button = styled.button`
     line-height: 1.625rem;
     letter-spacing: 0.01675rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 20.4375rem;
 
     p {
