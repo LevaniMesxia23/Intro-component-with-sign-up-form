@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import errorImg from "/images/icon-error.svg";
+import Nolook from "../../public/images/nolook.png";
+import Look from "../../public/images/look.png";
 
 export default function Inputs(props) {
   const [errors, setErrors] = useState({
@@ -19,6 +21,14 @@ export default function Inputs(props) {
     const { name, value } = event.target;
     const newObj = { ...values, [name]: value };
     setValues(newObj);
+  }
+
+  function passwordLook() {
+    if (password.type === "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
   }
 
   function validation(e) {
@@ -143,6 +153,7 @@ export default function Inputs(props) {
             placeholder="Password"
           />
           {errors.password == true ? <p>Password cannot be empty</p> : false}
+          <img className="eye" src={Nolook} alt="" onClick={passwordLook} />
         </div>
 
         <button>CLAIM YOUR FREE TRIAL</button>
@@ -190,6 +201,13 @@ const Box = styled.div`
       font-weight: 500;
       line-height: normal;
       margin-top: 0.37rem;
+    }
+    .eye {
+      width: 30px;
+      height: 30px;
+      margin-top: -2.5px;
+      margin-right: -7px;
+      cursor: pointer;
     }
   }
 
