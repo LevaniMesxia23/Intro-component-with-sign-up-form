@@ -20,14 +20,22 @@ const Box = styled.div`
   justify-content: center;
   padding: 30px;
   max-width: 540px;
-  background-color: #fff;
   border-radius: 12px;
+  background: #5e54a4;
 
   span {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    color: white;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.625rem;
+    letter-spacing: 0.01563rem;
+    padding-left: 1.21rem;
     img {
       width: 50px;
       height: 50px;
