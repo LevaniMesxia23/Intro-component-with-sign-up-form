@@ -2,15 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import Correct from "../../public/images/correct.png";
 
+
+
 export default function Completed() {
   return (
-    <Box>
+    <>
+      <Box>
       <span>
         Form submitted successfully! <img src={Correct} alt="" />
       </span>
     </Box>
+    <Refresh>
+      <a href="">Return to the registration form</a>
+    </Refresh>
+    </>
   );
 }
+
+const Refresh = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const Box = styled.div`
   width: 100%;
