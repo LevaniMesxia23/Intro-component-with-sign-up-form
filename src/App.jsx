@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Offer from "./components/Offer";
 import Form from "./components/Form";
+import Completed from "./components/Completed";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ function App() {
         </div>
         <div className="right-side">
           <Offer />
-          {component == false ? <Form setComponent={setComponent} /> : null}
+          {component == false ? <Form setComponent={setComponent} /> : <Completed />}
         </div>
       </Main>
     </>
