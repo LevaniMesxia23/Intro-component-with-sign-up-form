@@ -205,8 +205,9 @@ const Box = styled.div`
     .eye {
       width: 30px;
       height: 30px;
-      margin-top: -2.5px;
-      margin-right: -7px;
+      margin-top: -2px;
+      margin-right: ${(props) =>
+        props.errors.password === true ? "40px" : "-7px"};
       cursor: pointer;
     }
   }
